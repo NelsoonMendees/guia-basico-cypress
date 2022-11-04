@@ -1,0 +1,14 @@
+{
+  "name": "cypressbasico",
+  "version": "1.0.0",
+  "description": "Apresentação Cypress - Aula Verificação e Validação de Software",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nelson Mendes, Marina Martins",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^9.7.0"
+  }
+}
