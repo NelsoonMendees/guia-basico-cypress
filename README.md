@@ -40,7 +40,7 @@ npx cypress run
 
 # Será aberta a janela de execução de testes em modo visual, a mesma pode ser fechada.
 ```
-![alt text](cypress/fixtures/image/cypressOpen.png)
+![alt text](cypress/fixtures/image/CypressOpen.png)
 
 ```bash
 # No terminal digitar o codigo abaixo para abrir o projeto no Visual Studio Code:
