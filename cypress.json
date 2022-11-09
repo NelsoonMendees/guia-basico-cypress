@@ -1,5 +1,5 @@
 {
-  "baseUrl": "https://www.saucedemo.com/",
+  "baseUrl": "https://www.saucedemo.com",
   "viewportWidth": 1366,
   "viewportHeight": 768,
   "defaultCommandTimeout": 10000,

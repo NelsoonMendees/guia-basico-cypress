@@ -9,6 +9,7 @@
   "author": "Nelson Mendes, Marina Martins, Douglas Silva",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^9.7.0"
+    "cypress": "^9.7.0",
+    "cypress-xpath": "^2.0.1"
   }
 }

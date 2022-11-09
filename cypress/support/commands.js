@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+import loginPage from './pages/login/index'
+
+Cypress.Commands.add('login', function (user) {
+    loginPage.go()
+    loginPage.fillForm(user)
+    loginPage.submit()
+    loginPage.validaLogin()
+})
