@@ -19,6 +19,12 @@ class LoginPage {
     validaLogin() {
         cy.xpath(el.title).should('be.visible').and('have.text', 'Products')
     }
+
+    passworRequired(user, message) {
+        cy.get(el.user).type(user.userName)
+        cy.get(el.login).click()
+        cy.get(el.error).should('be.visible').and('have.text', message)
+    }
 }
 
 export default new LoginPage()

@@ -3,5 +3,6 @@ exports.el = {
     user: '[data-test="username"]',
     password: '//input[@id="password"]',
     login: '#login-button',
-    title: "//span[@class='title']"
+    title: "//span[@class='title']",
+    error: "[data-test='error']"
 }
