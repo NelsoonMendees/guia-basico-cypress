@@ -1,8 +1,8 @@
 /// <reference types="Cypress" />
 
-import loginPage from '../support/pages/login/index'
-import message from '../fixtures/message.json'
-import user from '../fixtures/user.json'
+import loginPage from '../../support/pages/login/index'
+import message from '../../fixtures/message.json'
+import user from '../../fixtures/user.json'
 
 describe('Login - Page Objects', () => {
     context('Quando o usuário informa dados validos', () => {

@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 import { faker } from '@faker-js/faker';
 
-import addToCart from '../support/pages/addToCart/index'
-import user from '../fixtures/user.json'
+import addToCart from '../../support/pages/addToCart/index'
+import user from '../../fixtures/user.json'
 
 describe('Adicionar produto no carrinho', () => {
 

@@ -4,11 +4,14 @@
   "description": "Apresentação Cypress - Aula Verificação e Validação de Software",
   "main": "index.js",
   "scripts": {
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nelson Mendes, Marina Martins, Douglas Silva",
   "license": "MIT",
   "devDependencies": {
+    "@bahmutov/cy-api": "^2.2.1",
     "@faker-js/faker": "^7.6.0",
     "cypress": "^9.7.0",
     "cypress-xpath": "^2.0.1",

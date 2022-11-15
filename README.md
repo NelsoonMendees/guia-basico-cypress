@@ -13,8 +13,9 @@
 * Node.js 12 ou 14 e acima
 
 ### Configuração
-*  Instalar NodeJs(recomendo utulizar a ultima versão LTS): https://nodejs.org/en/
+* Instalar NodeJs(recomendo utilizar a ultima versão LTS): https://nodejs.org/en/
 * IDE Sugerida (Visual Studio Code): https://code.visualstudio.com/
+* Documentação oficial: https://docs.cypress.io/guides/overview/why-cypress
 
 ## Iniciando Projeto
 
@@ -40,7 +41,7 @@ npm install -D cypress@9.7.0
 ![alt text](cypress/fixtures/image/npmInstall.png)
 
 ```bash
-# Apos concluir a instalação da dependencia do cypress no diretorio, inserir o codigo no terminal:
+# Apos concluir a instalação das dependencias do cypress no diretorio, inserir o codigo no terminal:
 npx cypress run
 
 # Será aberta a janela de execução de testes em modo visual, a mesma pode ser fechada.
@@ -68,9 +69,9 @@ code .
 
   ### Estrutura do arquivo Spec.js
   ![alt text](cypress/fixtures/image/specJs.png)
-* **reference types= Cypress**: Ajuda o autocomplete a identificar as palavras chave utilizadas pelo Cypress.
+* **reference types= cypress**: Ajuda o autocomplete a identificar as palavras chave utilizadas pelo Cypress.
 * **login.spec.js**: é o arquivo que o cypress utiliza para executar os testes na pagia alvo. A extensão .spec não é necessariamente obrigatoria mas é utilizda por boas praticas para identificar que é um arquivo de testes.
-* **Describe**: podemos informar qual funcionalidade será validada com o teste como por exemplo:
+* **Describe**: Podemos informar qual funcionalidade será testada nessa spec:
     ```bash
     describe('Login', () => {
 
@@ -80,17 +81,17 @@ code .
 
     })
     ```
-* **Context**: aqui podemos informa o contexto do teste que será executado como por exemplo:
+* **Context**: Podemos informar o contexto do teste:
     ```bash
-    context('Quando o usuario informa dados validos', function(){
+    context('Quando o usuario informar dados validos', function(){
 
     })
     # ou
-    context('Quando o usuario informa dados validos', () => {
+    context('Quando o usuario informar dados validos', () => {
 
     })
     ```
-* **It**: aqui é onde fica a assertiva do teste e toda sua estrutura de execução: 
+* **It**: Incluimos todo o codigo do teste realizando as assertivas do contexto: 
   ```bash
     it('Deve realizar login com sucesso', () => {
 
@@ -104,42 +105,53 @@ code .
 
     });
 ### Comandos Basicos
-* **cy.visit()**: Esse comando é utilizado para abrir a pagina web que iremos testar. Diferente do selenium que devemos instanciar um driver para depois inserir a url da pagina.
-Exemplo: 
-  ```bash
-    WebDriver driver = new FirefoxDriver();
-    driver.get("http://www.google.com");
-  ```
-  com Cypress informaremos somente o comando:
+* **cy.visit()**: Esse comando é utilizado para abrir o navegador na pagina que iremos testar.
   ```bash
     cy.visit('http://www.google.com')
     # ou caso ja tenha uma baseUrl definida no arquivo cypress.json devemos apenas digitar o comando:
     cy.visit('/')
   ```
 
-* **cy.get()**: diferente do selenium que precisamos informar qual seletor estamos utilizando.
-Exemplo:
-  ```bash
-    Driver.FindElement(By.Id("#email"));
-    Driver.FindElement(By.XPath("//span[text()='Login']/.."));
-  ```
-  com Cypress podemos passar de forma direta que o mesmo já reconhece o tipo de seletor utilizado. 
+* **cy.get()**: é utilizado para pegar um elemento da tela(input, titulo, botão, etc)
   Exemplo:
   ```bash
   cy.get('#email');
   cy.get('.password')
-  # apenas quando ulizamos XPath que devemos informar o tipo de seletor(é necessario instalar a dependencia: npm install -D cypress-xpath)
-  cy.xpath('//span[text()="Login"]/..')
+  # caso seja necessario utilizar xpath, o comando deve ser (é necessario instalar a dependencia: npm install -D cypress-xpath):
+  cy.xpath("//span[text()='Login']/..")
   ```
-* **Type**: é utilizado para simular um usuario digitando em um input de texto, diferente do selenium que devemos utilizar "SendKeys".
-  Exemplo:
-  ```bash
-    Driver.FindElement(By.Id("#email")).SendKeys("seuEmail@dominio.com");
-  ```
-  com Cypress o comando é mais simples de utilizar.
-  Exemplo:
+* **Type**: é utilizado para simular um usuario digitando em um input de texto por exemplo:
   ```bash
   cy.get('#password').type('pwd123');
   # podemos simular um enter no mesmo comando:
-   cy.get('#password').type('pwd123{enter}')
+  cy.get('#password').type('pwd123{enter}')
   ```
+* **Should**: é utilizado para realizar validações em elementos na tela, como por exemplo:
+  ```bash
+  # Quero verificar se um elemento está visivel na tela:
+  cy.get('.title').should('be.visible')
+  # Quero verificar se um elemento está visivel na tela e contem um determinado texto:
+  cy.get('.title').should('be.visible').and('have.text', 'Bem Vindo!')
+  ```
+
+# Exemplo de estrutura de teste finalizada:
+ ![alt text](cypress/fixtures/image/projetoFinal.png)
+
+# Executando o teste
+Para executar o teste em modo visual (abre navegador automanticamente e executa os testes) devemos digitar seguinte comando no terminal:
+```bash
+npx cypress open
+```
+Devemos visualizar esta tela:
+ ![alt text](cypress/fixtures/image/modoVisual.png)
+
+Para executar todos os testes basta clicar em "Run 4 integration specs" ou para executar um teste especicifo basta clicar no teste desejado, por exemplio vamos executar o teste "login.spec.js" devemos visualizar a execução do teste:
+![alt text](cypress/fixtures/image/executandoVisual.gif)
+
+Caso queira executar em modo headless, basta digitar o seguinte comando no terminal:
+```bash
+npx cypress run
+# OBS: Todas as specs vão ser executadas.
+```
+Essa será a visualização da execução:
+![alt text](cypress/fixtures/image/executandoHeadless.gif)

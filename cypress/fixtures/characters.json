@@ -1,0 +1,18 @@
+{
+    "Wanda": {
+        "name": "Wanda Maximoff",
+        "alias": "Feiticeira Escarlate",
+        "team": [
+            "Vingadores"
+        ],
+        "active": true
+    },
+    "Stark": {
+        "name": "Anthony Stark",
+        "alias": "Homem de Ferro",
+        "team": [
+            "Vingadores"
+        ],
+        "active": false
+    }
+}
