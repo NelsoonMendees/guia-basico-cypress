@@ -56,21 +56,21 @@ code .
 ![alt text](cypress/fixtures/image/Estrutura.png)
 
 * Cypress:  Armazena toda a estrutura de pastas do projeto
-  * **Fixtures**: diretorio onde armazenamos arquivos json, imagens e pdfs que podem ser utulizados nos testes.
+  * **Fixtures**: diretorio onde armazenamos arquivos json, imagens e pdfs que podem ser utilizados nos testes.
   * **Integration**: diretorio que armazenamos arquivos .spec.js(são os arquivos utilizados pelo Cypress para executar os testes)
-  * **Plugins**: diretorio que armazena aquivos de configurações de plugins.
+  * **Plugins**: diretorio que armazena arquivos de configuração de plugins.
   * **Support**: diretorio que armazena arquivos ou pastas de suporte.
-  * **Node Modules**: diretorio de configurações gerado pelo NodeJs(não alterar nada nesse diretorio ⛔)
+  * **Node Modules**: diretorio de configuração gerado pelo NodeJs(não alterar nada nesse diretorio ⛔)
   * **cypress.json**: arquivo de configurações do cypress como exemplo abaixo:
   ![alt text](cypress/fixtures/image/cypressjson.png)
-  * **package-lock.json**: arquivo que armazena todo o historio de instalação de dependencias do projeto.
+  * **package-lock.json**: arquivo que armazena todo o historico de instalação de dependencias do projeto.
   * **package.json**: arquivo de configuração do projeto criado nas configurações iniciais do projeto.
       ![alt text](cypress/fixtures/image/package.png)
 
   ### Estrutura do arquivo Spec.js
   ![alt text](cypress/fixtures/image/specJs.png)
-* **reference types= cypress**: Ajuda o autocomplete a identificar as palavras chave utilizadas pelo Cypress.
-* **login.spec.js**: é o arquivo que o cypress utiliza para executar os testes na pagia alvo. A extensão .spec não é necessariamente obrigatoria mas é utilizda por boas praticas para identificar que é um arquivo de testes.
+* **reference types= cypress**: Ajuda o autocomplete a identificar as palavras chaves utilizadas pelo Cypress.
+* **login.spec.js**: é o arquivo que o cypress utiliza para executar os testes na pagina alvo. A extensão .spec não é necessariamente obrigatoria mas é utilizada por boas praticas para identificar que é um arquivo de testes.
 * **Describe**: Podemos informar qual funcionalidade será testada nessa spec:
     ```bash
     describe('Login', () => {
@@ -138,14 +138,14 @@ code .
  ![alt text](cypress/fixtures/image/projetoFinal.png)
 
 # Executando o teste
-Para executar o teste em modo visual (abre navegador automanticamente e executa os testes) devemos digitar seguinte comando no terminal:
+Para executar o teste em modo visual (abre navegador automanticamente e executa os testes) devemos digitar o seguinte comando no terminal:
 ```bash
 npx cypress open
 ```
 Devemos visualizar esta tela:
  ![alt text](cypress/fixtures/image/modoVisual.png)
 
-Para executar todos os testes basta clicar em "Run 4 integration specs" ou para executar um teste especicifo basta clicar no teste desejado, por exemplio vamos executar o teste "login.spec.js" devemos visualizar a execução do teste:
+Para executar todos os testes basta clicar em "Run 4 integration specs" ou para executar um teste especifico basta clicar no teste desejado, por exemplio vamos executar o teste "login.spec.js" devemos visualizar a execução do teste:
 ![alt text](cypress/fixtures/image/executandoVisual.gif)
 
 Caso queira executar em modo headless, basta digitar o seguinte comando no terminal:
